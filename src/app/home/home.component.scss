@@ -1,0 +1,112 @@
+$image-height: 500px;
+
+.banner {
+    // min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.banner p {
+    margin: 1em 0 0;
+    padding: 0;
+    font-size: 1.2em;
+    font-weight: 1000;
+    line-height: 1.5em;
+}
+
+.start-compress {
+    display: inline-block;
+    margin: 1em 0 0;
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 800;
+}
+
+.start-compress:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.home-image {
+    width: 100%;
+}
+
+.slider {
+    display: flex;
+    background: url(./../../assets/images/original.jpg) no-repeat;
+    background-position: 0 center;
+    background-size: 100vw $image-height;
+    height: $image-height;
+    position: relative;
+}
+
+.slider input {
+    -webkit-appearance: none;
+    width: 100%;
+    background: none;
+    z-index: 10;
+}
+
+.slider:focus {
+    border: none;
+}
+
+.slider input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 3px;
+    height: $image-height;
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+.compressed-image {
+    position: absolute;
+    height: $image-height;
+    left: 0;
+    width: 20%;
+    background: url(./../../assets/images/compressed.jpg) no-repeat;
+    background-size: 100vw $image-height;
+    background-position: 0 center;
+}
+
+// @media (max-width: 993px) {
+//     .banner {
+//         flex-direction: column;
+//     }
+// }
+
+.slide2 {
+    border-left: 2px solid var(--primary);
+}
+
+.main-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-container .slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main-container .slide.slide1 {
+    background: url(./../../assets/images/compressed.jpg);
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.main-container .slide.slide2 {
+    background: url(./../../assets/images/original.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    left: 50%;
+}

@@ -1,0 +1,34 @@
+<header [ngClass]="{'main-header': currentScreen == '/home' || currentScreen == '/' }">
+
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" [routerLink]="['/']">My Image Compressor</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-lg-auto">
+                    <!-- <li class="nav-item" [ngClass]="{ 'active': currentScreen == '/home' || currentScreen == '/' }">
+                        <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+                    </li> -->
+                    <!-- <li class="nav-item" [ngClass]="{ 'active': currentScreen == '/compress' }">
+                        <a class="nav-link" [routerLink]="['/compress']">Compress</a>
+                    </li> -->
+                    <!-- <li class="nav-item" [ngClass]="{ 'active' : currentScreen == '/contact' }">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li> -->
+                    <!-- <li class="nav-item" [ngClass]="{ 'active': currentScreen == '/donate' }">
+                        <a class="nav-link" [routerLink]="['/donate']">Donate</a>
+                    </li> -->
+                    <!-- <li class="nav-item" [ngClass]="{ 'active': currentScreen == '/about' }">
+                        <a class="nav-link" href="#">About</a>
+                    </li> -->
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+</header>

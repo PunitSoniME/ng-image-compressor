@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+<div class="container">
+
+    <div class="row pt-80px">
+
+        <div class="offset-1 p-0 col-10 pt-3">
+            <div class="container">
+                <div class="slider">
+                    <div class="compressed-image" [style.width]="originalImageWidth"></div>
+                    <input type="range" #ranger max="100" name="range" [value]="range" (input)="change(ranger.value)" />
+                </div>
+            </div>
+        </div>
+
+        <div class="offset-1 col-10">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a class="p-2 font-weight-bold" download="compressed.jpg"
+                        href="./../../assets/images/compressed.jpg">Compressed (421 KB)</a>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <a class="p-2 font-weight-bold" download="original.jpg"
+                        href="./../../assets/images/original.jpg">Original (539 KB)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <section class="banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <p>
+                                Without taking your precious time in description, Let's start compression
+                            </p>
+                            <a class="start-compress" [routerLink]="['/compress']">Start Compress</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<ng-adsense [adClient]="'ca-pub-1716730806289433'" [adSlot]="8853432365" [pageLevelAds]="true"
+    [display]="'inline-block'" [width]="320" [height]="108">
+</ng-adsense>
+
+
+<!-- 
+
+<div class="main-container">
+    <div class="slide slide1"></div>
+    <div class="slide slide2" [style.left]="originalImageWidth" (mousemove)="coordinates()"></div>
+</div> -->

@@ -1,0 +1,90 @@
+<app-header></app-header>
+
+<div class="container">
+
+    <div class="pt-100px pb-3">
+        <file-upload class="upload-box" [control]="fileUploadControl" accept="image/*" [multiple]="multiple"
+            name="files" [(ngModel)]="uploadedFiles">
+        </file-upload>
+    </div>
+
+    <div class="mt-3" *ngIf="processedImages.length > 0">
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-sm">
+
+                <!-- <thead class="bg-primary text-white">
+                    <tr>
+                        <th scope="col" width="30%">Name</th>
+                        <th scope="col" width="20%" class="text-center">Compressed Size</th>
+                        <th scope="col" width="20%" class="text-center">Saved %</th>
+                        <th scope="col" width="30%"></th>
+                    </tr>
+                </thead> -->
+
+                <tbody>
+                    <tr *ngFor="let image of processedImages; let i = index">
+                        <td width="30%">
+                            <!-- <img class="img-thumbnail" [class]="image.rotate" [src]="image.generatedImage" *ngIf="image.generatedImage"> -->
+                            <b class="text-truncate">{{image.file.name}}</b>
+                        </td>
+                        <td class="text-center" width="20%">
+                            <b *ngIf="image.compressedImageSize">
+                                {{image.compressedImageSize.size}}
+                                {{image.compressedImageSize.type}}
+                            </b>
+                        </td>
+                        <td class="text-center" width="20%">
+                            <!-- <img class="img-thumbnail" [src]="image.compressedImage" *ngIf="image.compressedImage"> -->
+                            <b *ngIf="image.compressedPercentage">{{image.compressedPercentage}} %</b>
+                        </td>
+                        <td width="30%">
+                            <ngb-progressbar *ngIf="!image.compressedImage" height="32px" type="secondary"
+                                textType="white" [value]="100" [striped]="true" [animated]="true">
+                                <i>Processing... {{image.compressedImage}}</i>
+                            </ngb-progressbar>
+
+                            <a class="btn btn-primary btn-sm btn-block" [download]="image.file.name"
+                                *ngIf="image.compressedImage" [href]="image.compressedImage">Download
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+    <div class="row mt-3">
+        <div class="col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="./../../assets/images/original.jpg" alt="Original Image">
+                <div class="card-body">
+                    <h6 class="card-title">
+                        <a class="font-weight-bold" download="original.jpg" href="./../../assets/images/original.jpg">
+                            <b>Original (539 KB)</b>
+                        </a>
+                    </h6>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="./../../assets/images/compressed.jpg" alt="Compressed Image">
+                <div class="card-body">
+                    <h6 class="card-title">
+                        <a class="font-weight-bold" download="compressed.jpg"
+                            href="./../../assets/images/compressed.jpg">
+                            <b>Compressed (421 KB)</b>
+                        </a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
